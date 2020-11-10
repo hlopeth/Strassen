@@ -25,6 +25,7 @@ public:
 	void recize(uint32_t newColls, uint32_t newRows);
 	uint32_t colls() const;
 	uint32_t rows() const;
+	double* data() const;
 	static void split(const Matrix& src, Matrix& m11, Matrix& m12, Matrix& m21, Matrix& m22);
 	static Matrix merge(const Matrix& m11, const Matrix& m12, const Matrix& m21, const Matrix& m22);
 	~Matrix();

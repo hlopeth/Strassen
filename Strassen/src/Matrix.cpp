@@ -192,6 +192,11 @@ uint32_t Matrix::rows() const
 	return _rows;
 }
 
+double* Matrix::data() const
+{
+	return _data;
+}
+
 void Matrix::split(const Matrix& src, Matrix& m11, Matrix& m12, Matrix& m21, Matrix& m22)
 {
 	uint32_t n = src._colls / 2;
