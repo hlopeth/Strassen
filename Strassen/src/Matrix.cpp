@@ -4,11 +4,29 @@
 #include <iomanip>
 #include <random>
 
+Matrix::Matrix():
+	_colls(0),
+	_rows(0),
+	_data(0)
+{
+}
+
 Matrix::Matrix(uint32_t with, uint32_t height):
 	_colls(with),
 	_rows(height),
 	_data(with * height)
 {
+}
+
+Matrix::Matrix(const Matrix& m):
+	_colls(m.colls()),
+	_rows(m.rows()),
+	_data(m.colls() * m.rows())
+{
+	for (uint32_t i = 0; i < _colls * _rows; i++)
+	{
+		_data[i] = m(i);
+	}
 }
 
 double& Matrix::operator()(uint32_t row, uint32_t coll)

@@ -6,7 +6,9 @@
 class Matrix
 {
 public:
+	Matrix();
 	Matrix(uint32_t with, uint32_t height);
+	Matrix(const Matrix& m);
 	double& operator()(uint32_t row, uint32_t coll);
 	double& operator()(uint32_t i);
 	double operator()(uint32_t row, uint32_t coll) const;
